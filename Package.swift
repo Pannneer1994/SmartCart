@@ -16,8 +16,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .binaryTarget(
             name: "SDWebImage",
-            url: "https://github.com/SDWebImage/SDWebImage/releases/download/5.21.0/SDWebImage-static.xcframework.zip",
-            checksum: "cd8185cfd36836797327b7a11b65584100f86edb7878658e82db363ac02877a6"
+            url: "https://github.com/SDWebImage/SDWebImage/releases/download/5.21.0/SDWebImage-dynamic.xcframework.zip",
+            checksum: "e034ea04f5e86866bc3081d009941bd5b2a2ed705b3a06336656484514116638"
         ),
         .target(
             name: "SmartCart",
