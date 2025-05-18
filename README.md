@@ -1,1 +1,3 @@
 # SmartCart
+
+easy and safty
