@@ -2,7 +2,7 @@
 import Foundation
 
 protocol ProductServiceProtocol {
-    func fetchProducts(for category: ProductCategory, completion: @escaping (Result<[Product], Error>) -> Void)
+    func fetchProducts(for category: Endpoint, completion: @escaping (Result<[Product], ProductError>) -> Void)
 }
 
 final class ProductService: ProductServiceProtocol {
@@ -15,11 +15,8 @@ final class ProductService: ProductServiceProtocol {
         self.localDetails = localDetails
     }
     
-    func fetchProducts(for category: Endpoint, completion: @escaping (Result<[Product], Error>) -> Void) {
-        guard let url = localDetails.url(for: category) else {
-            completion(.failure(ProductError.fileNotFound))
-            return
-        }
+    func fetchProducts(for category: Endpoint, completion: @escaping (Result<[Product], ProductError>) -> Void) {
+        let url = localDetails.url(for: category)
 
         DispatchQueue.global().async {
             do {
