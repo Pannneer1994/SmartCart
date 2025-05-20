@@ -1,6 +1,7 @@
 
 import Foundation
 
+/// A model representing a product in the SmartCart system.
 public struct Product: Codable, Identifiable {
     public let id: String
     public let name: String
@@ -10,6 +11,11 @@ public struct Product: Codable, Identifiable {
     public let shortDescription: String
 }
 
-public enum Endpoint: String {
-    case books, electronics, fashion, sports, groceries
+/// Supported product categories for SmartCart.
+public enum Endpoint: String, CaseIterable, Codable {
+    case books
+    case electronics
+    case fashion
+    case sports
+    case groceries
 }
